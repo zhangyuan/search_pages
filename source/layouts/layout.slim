@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title search
+    = stylesheet_link_tag "normalize"
+    = stylesheet_link_tag "search"
+    = javascript_include_tag "search"
+  body
+    .header
+      .body
+        = yield
+    .footer

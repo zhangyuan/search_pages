@@ -3,9 +3,9 @@
 ###
 
 # Change Compass configuration
-# compass_config do |config|
+#compass_config do |config|
 #   config.output_style = :compact
-# end
+#end
 
 ###
 # Page options, layouts, aliases and proxies
@@ -18,7 +18,8 @@
 #
 # With alternative layout
 # page "/path/to/file.html", :layout => :otherlayout
-#
+# 
+
 # A path which all have the same layout
 # with_layout :admin do
 #   page "/admin/*"
@@ -62,11 +63,13 @@ configure :build do
   # activate :minify_javascript
 
   # Enable cache buster
-  # activate :asset_hash
+  activate :asset_hash
 
   # Use relative URLs
-  # activate :relative_assets
+  activate :relative_assets
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
+
+Slim::Engine.set_default_options :pretty => true

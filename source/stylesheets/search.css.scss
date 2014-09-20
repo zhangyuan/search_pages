@@ -1,0 +1,15 @@
+@import "buttons";
+
+.top-search {
+  input {
+    margin-right: 10px;
+  }
+
+  input[type="text"] {
+    height: 28px;
+    width: 500px;
+  }
+
+  padding: 10px 20px;
+  border-bottom: 1px solid #DDD;
+}
