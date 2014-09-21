@@ -1,5 +1,20 @@
 #top-search
+#search-results
+
 script id="top-search-template" type="x-tmpl-mustache"
   form.top-search action="#"
     input type="text" name="query" value="{{query}}" class="query"
     input type="submit" value="搜索" class="submit button button-rounded button-flat-primary"
+
+script id="search-results-template" type="x-tmpl-mustache"
+  '{{#query}}
+  div
+    ' 共搜索到和 {{query}} 相关的 {{total}}条结果。以下显示第{{current_page}}页
+  ul
+    ' {{#items}}
+    li.title
+      ' {{title}}
+    ' {{/items}}
+  .paginate
+    a href="#search/{{query}}/{{current_page}}" 第二页
+  '{{/query}}
