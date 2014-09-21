@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>search</title>
+    <meta charset="UTF-8" />
+    <link href="stylesheets/normalize.css" rel="stylesheet" type="text/css" /><link href="stylesheets/search.css" rel="stylesheet" type="text/css" /><script src="javascripts/utilities.js" type="text/javascript"></script><script src="javascripts/main.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="body">
+        <div id="top-search"></div>
+        <div id="search-results"></div>
+        <script id="top-search-template" type="x-tmpl-mustache">
+          <form action="#" class="top-search">
+            <input class="query" name="query" type="text" value="{{query}}" /><input class="submit button button-rounded button-flat-primary" type="submit" value="搜索" />
+          </form>
+        </script>
+        <script id="search-results-template" type="x-tmpl-mustache">
+          {{#query}} 
+          <div>
+            共搜索到和 {{query}} 相关的 {{total}}条结果。以下显示第{{current_page}}页 
+          </div>
+          <ul>
+            {{#items}} 
+            <li class="title">
+              {{title}} 
+            </li>
+            {{/items}} 
+          </ul>
+          <div class="paginate">
+            <a href="#search/{{query}}/{{current_page}}">第二页</a>
+          </div>
+          {{/query}} 
+        </script>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </body>
+</html>
